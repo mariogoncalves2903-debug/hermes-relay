@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hermes Web access</title></head>
-<body><p id="msg">Opening Hermes Web access&hellip;</p>
-<a id="go" href="#" style="display:none">Open Hermes Web access</a>
-<script>
-// The tunnel hostname rotates; read the live one instead of hard-coding it.
-fetch('webapp.json?_=' + Date.now(), {cache: 'no-store'})
-  .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-  .then(function (d) {
-    if (!d.url) throw new Error('no url in webapp.json');
-    document.getElementById('go').href = d.url;
-    document.getElementById('msg').textContent = 'Opening ' + d.url + '…';
-    location.replace(d.url);
-  })
-  .catch(function (e) {
-    document.getElementById('msg').textContent = 'Could not read the live tunnel URL: ' + e.message;
-  });
-</script></body></html>
+<meta http-equiv="refresh" content="0;url=./">
+<title>Hermes Relay</title>
+<script>location.replace('./');</script>
+</head><body><p>Opening Hermes Relay…</p></body></html>
